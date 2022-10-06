@@ -19,7 +19,8 @@ app.use(cookieParser());
 //mongodb 연결
 const mongoose = require('mongoose')
 // 특수문자 사용시 %+ASCII_code_of_the_character로 인코딩해야함. 따라서, !=%21, @=%40, #=%23으로 변경 함.
-mongoose.connect(config.mongoURI, 'mongodb+srv://testuser:testuser123%21%40%23@boilerplate.ugmrmpi.mongodb.net/?retryWrites=true&w=majority', {
+// 추가적으로 해당 부분을 
+mongoose.connect(config.mongoURI, {
     useNewUrlParser: true, 
     useUnifiedTopology: true
     // seCreateIndex: true, 
